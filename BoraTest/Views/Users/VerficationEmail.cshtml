@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Verfication Email";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Verfication Email</h4>
+        <hr />
+        @if (@ViewBag.Error != null)
+        {
+            <div class="alert alert-danger">
+                <strong>Info!</strong> @ViewBag.Error .
+            </div>
+        }
+        else if (@ViewBag.Success != null)
+        {
+            <div class="alert alert-success">
+                <strong>Info!</strong> @ViewBag.Success.
+            </div>
+
+        }
+    </div>
+}
+
+
